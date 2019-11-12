@@ -3,12 +3,14 @@ import pandas as pd
 import numpy as np
 from collections import defaultdict
 import re
+import dill as pickle
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def main_script():
+
     '''from sklearn.datasets import fetch_20newsgroups
     categories = ['alt.atheism', 'soc.religion.christian', 'comp.graphics', 'sci.med']
     newsgroups_train = fetch_20newsgroups(subset='train', categories=categories)
@@ -18,11 +20,16 @@ def main_script():
     print ("Total Number of Training Labels: ",len(train_labels)) # Outputs -> #Total Number of Training Labels:  2257
     print(train_data)
     print(train_labels)'''
+    # Try to read pickle file
+
+    nb = pickle.load(open("nb_model.pickle", "rb"))
+    # If pickle file does not exist, create a model and dump it into a pickle file
+
     # Read ufo file using pandas dataframe
-    ufo = pd.read_csv("Reports.csv", error_bad_lines=False, sep=',')
-    '''print(ufo.head())
+    '''ufo = pd.read_csv("Test-Reports.csv", error_bad_lines=False, sep=',')
+    print(ufo.head())
     print(ufo.info())
-    print(ufo.isnull().sum())'''
+    print(ufo.isnull().sum())
 
     # Get unique labels to use for dataset
     train_labels = ufo['shape']
@@ -33,9 +40,9 @@ def main_script():
 
     nb.train(train_data, train_labels)  # start tarining by calling the train function
     print('----------------- Training Completed ---------------------')
-    '''newsgroups_test = fetch_20newsgroups(subset='test', categories=categories)  # loading test data
+    newsgroups_test = fetch_20newsgroups(subset='test', categories=categories)  # loading test data
     test_data = newsgroups_test.data  # get test set examples
-    test_labels = newsgroups_test.target  # get test set labels'''
+    test_labels = newsgroups_test.target  # get test set labels
     test_data = train_data
     test_labels = train_labels
 
@@ -48,7 +55,9 @@ def main_script():
 
     print("Test Set Examples: ", test_labels.shape[0])  # Outputs : Test Set Examples:  1502
     print("Test Set Accuracy: ", test_acc * 100, "%")  # Outputs : Test Set Accuracy:  93.8748335553 %
-    new_query = ["It was shaped like a V"]
+    pickle.dump(nb, open("nb_model.pickle", "wb"))'''
+
+    new_query = ["It was shaped like a round ball"]
     p_query = nb.test(new_query)
     prob_query = nb.getExampleProb("It was shaped like a V")
     print(p_query)
