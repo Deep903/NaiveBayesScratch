@@ -50,7 +50,10 @@ def main_script():
     print("Test Set Accuracy: ", test_acc * 100, "%")  # Outputs : Test Set Accuracy:  93.8748335553 %
     new_query = ["It was shaped like a V"]
     p_query = nb.test(new_query)
+    prob_query = nb.getExampleProb("It was shaped like a V")
     print(p_query)
+    print(max(100+prob_query))
+    print(100 + prob_query)
     return 'Hello World!'
 
 
