@@ -19,15 +19,15 @@ def main_script():
     print(train_data)
     print(train_labels)'''
     # Read ufo file using pandas dataframe
-    ufo = pd.read_csv("Test-Reports.csv", error_bad_lines=False, sep=',')
+    ufo = pd.read_csv("Reports.csv", error_bad_lines=False, sep=',')
     '''print(ufo.head())
     print(ufo.info())
     print(ufo.isnull().sum())'''
 
     # Get unique labels to use for dataset
     train_labels = ufo['shape']
-    train_data = ufo['comments']
     print(np.unique(train_labels))
+    train_data = ufo['comments']
     nb = NaiveBayes(np.unique(train_labels))  # instantiate a NB class object
     print("---------------- Training In Progress --------------------")
 
