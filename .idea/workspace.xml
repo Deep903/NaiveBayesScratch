@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="284f7072-291c-42dd-95ac-670961224184" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="284f7072-291c-42dd-95ac-670961224184" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/webResources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/mystyle.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/stats.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/NaiveBayesScratch.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/NaiveBayesScratch.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nb_model.pickle" beforeDir="false" afterPath="$PROJECT_DIR$/nb_model.pickle" afterDir="false" />
+    </list>
+>>>>>>> parent of 2898698... added virtual env
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +136,11 @@
       <workItem from="1573585355277" duration="7694000" />
       <workItem from="1573595216415" duration="1707000" />
       <workItem from="1573612613918" duration="714000" />
+<<<<<<< HEAD
       <workItem from="1573613397322" duration="6153000" />
+=======
+      <workItem from="1573613397322" duration="4859000" />
+>>>>>>> parent of 2898698... added virtual env
     </task>
     <servers />
   </component>
