@@ -126,3 +126,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 >>>>>>> parent of 2898698... added virtual env
+/venv/Scripts/
+/venv/Lib/
+/venv/Lib/site-packages/
